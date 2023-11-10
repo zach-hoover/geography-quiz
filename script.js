@@ -24,6 +24,7 @@ var currentQuestionIndex = 0;
 var timerInterval;
 
 function showQuestion(question) {
+    quizContainerEl.innerHTML = '';
     var questionEl = document.createElement('h1');
     questionEl.classList.add('text-primary', 'justify-center');
     questionEl.textContent = question.question;
@@ -70,7 +71,6 @@ function handleAnswerClick(selectedAnswer, correctAnswer) {
 function startQuiz() {
     currentQuestionIndex = 0;
     timer = 60
-    quizContainerEl.innerHTML = '';
     timerInterval = setInterval(function () {
         timer--;
         updateTimerDisplay();
